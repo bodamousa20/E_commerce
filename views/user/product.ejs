@@ -1,0 +1,20 @@
+<%- include('../includes/header') %>
+
+<body>
+    <div class="products__container">
+        <div class="product__card">
+            <figure>
+                <img src="<%= product.imageURL %>" alt="<%= product.name %>">
+            </figure>
+            <figcaption>
+                <p class="title"><%= product.name %></p>
+                <p class="desc"><%= product.description %></p>
+                <p class="price">$<%= product.price %></p>
+                <form action="/user/add-to-cart/<%= product._id %>" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </figcaption>
+        </div>
+    </div>
+</body>
+</html>

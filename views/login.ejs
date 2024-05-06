@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <div class="login">
+        <form action="./login" method="POST">
+            <h1>Login</h1>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+            <label for="role">Role:</label>
+            <input type="radio" id="user" name="role" value="user" checked>
+            <label for="user">User</label>
+            <input type="radio" id="admin" name="role" value="admin">
+            <label for="admin">Admin</label>
+            <button type="submit">send</button>
+        </form>
+    </div>
+</body>
+</html>

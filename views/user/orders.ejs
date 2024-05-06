@@ -1,0 +1,25 @@
+<%- include('../includes/header.ejs') %>
+<body>
+    <div class="products__container">
+        <% if(orders.length > 0) { %>
+            <% orders.forEach(order => { %>
+                <div class="product__card">
+                    <figure>
+                        <img src="<%= order._id.imageURL %>" alt="<%= order._id.name %>">
+                    </figure>
+                    <figcaption>
+                        <p class="title"><%= order._id.name %></p>
+                        <p class="desc"><%= order._id.description %></p>
+                        <p class="price">$<%= order._id.price %></p>
+                        <form action="/user/product/<%= order._id._id %>" method="GET">
+                            <button type="submit">View</button>
+                        </form>
+                    </figcaption>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="couldnt__found">No items found.</div>
+        <% } %>
+    </div>
+</body>
+</html>
